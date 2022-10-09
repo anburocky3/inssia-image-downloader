@@ -6,6 +6,10 @@ from termcolor import colored
 
 output_dir = 'output'
 
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36"
+}
+
 
 def createOutputFolderIfNotExist():
     if not os.path.exists(output_dir):
@@ -40,7 +44,7 @@ def spider(url, directory):
 
     # while page <= max_pages:
     # url = 'https://www.inssia.com/viewtopic.php?f=35&t=23XXX&start=' + str(page)
-    sourcecode = requests.get(url)
+    sourcecode = requests.get(url, headers=headers)
     plaintext = sourcecode.text
     soup = BeautifulSoup(plaintext, "lxml")
 
@@ -54,20 +58,21 @@ def spider(url, directory):
 
         filename = link.strip('/').rsplit('/', 1)[-1]  # to get the correct file name
 
-        res = requests.get(link, stream=True)  # use requests to get the content of the images
+        res = requests.get(link, headers=headers, stream=True)  # use requests to get the content of the images
 
         if res.status_code == 200:
             with open(f'{directory}/{filename}', 'wb') as f:
                 shutil.copyfileobj(res.raw, f)
                 # f.write(image)  # write the image into a file
                 print(
-                    f'{colored(f"    ---#{image_count} SUCCESS:", "green")} - Image successfully Downloaded: {colored(filename, "blue")}')
+                    f'{colored(f"    ---#{image_count} SUCCESS:", "green")}'
+                    f' - Image successfully Downloaded: {colored(filename, "blue")}')
 
             image_count += 1
         else:
-            print(f'{colored("    ---ERROR:", "red")} - Image Could not be retrieved')
+            print(f'{colored("    ---ERROR:", "red")} - Image Could not be retrieved: {colored(filename, "blue")}')
 
-    print(f'Total Images found on {url} is: {colored(image_count, "orange")}')
+    print(colored(f"Total Images found on {url} is: {image_count}", "yellow"))
 
 
 if __name__ == '__main__':
