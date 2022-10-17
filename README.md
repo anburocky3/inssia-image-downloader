@@ -34,7 +34,7 @@ python main.py # you have to have python 3 installed.
 ### Windows:
 
 > No change required in code.
-### Linux 
+### Linux:
 
 ```shell
 sudo apt install aria2 # You should make aria2c installed.
