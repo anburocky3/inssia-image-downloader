@@ -60,7 +60,8 @@ def spider(links):
     print(colored(f"Current working on {links} and found {img_count}", "yellow"))
 
 def imgdownloader():
-    cmd = ".\\aria2c.exe -x 16 -i actress.txt -d output\\"+ user_dir +"\\"
+    cmd = ".\\aria2c.exe -x 16 -i actress.txt -d output\\"+ user_dir +"\\" #For Windows
+    #cmd = "aria2c -x 16 -i actress.txt -d output\\"+ user_dir +"\\" #For Linux
     subprocess.call(cmd, shell=True) 
 
 if __name__ == '__main__':
