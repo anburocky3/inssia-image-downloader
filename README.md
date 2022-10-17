@@ -31,6 +31,19 @@ python main.py # you have to have python 3 installed.
 
 **Note:** Download completed mentions on sucessfull downloads with including error occuered contains invalid or broken media (can be ignored).
 
+### Windows:
+
+> No change required in code.
+### Linux 
+
+```shell
+sudo apt install aria2 # You should make aria2c installed.
+aria2c                 # Check with cmd 
+```
+
+> Check imgdownloader() in main.py
+
+
 ### License: MIT + (use it with care)
 
 ### Tested platforms
