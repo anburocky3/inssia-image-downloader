@@ -25,6 +25,12 @@ python main.py # you have to have python 3 installed.
 
 3. It will download it for you. Automatically.
 
+**Sample download end:**
+| Status Legend:
+   (OK):download completed.(ERR):error occurred. |
+
+**Note:** Download completed mentions on sucessfull downloads with including error occuered contains invalid or broken media (can be ignored).
+
 ### License: MIT + (use it with care)
 
 ### Tested platforms
