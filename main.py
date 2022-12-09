@@ -42,7 +42,7 @@ def welcomePage():
         url = f'{url_to_grab}&start=' + str(page)
         urls.append(url)
 
-    with concurrent.futures.ThreadPoolExecutor(100) as executor: # Adjust Threads as per your network and PC config
+    with concurrent.futures.ThreadPoolExecutor(30) as executor: # Adjust Threads as per your network and PC config
         executor.map(spider, urls)
     
 
