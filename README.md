@@ -8,7 +8,7 @@ Simple tool, which will download all images based on the URL provided.
 ## How to use it?
 
 1. [Fork the repository]() and run the `main.py` using the following command
-
+> Use Python 3.9  
 ```shell
 python main.py # you have to have python 3 installed.
 ```
