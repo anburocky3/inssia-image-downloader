@@ -8,7 +8,7 @@ Simple tool, which will download all images based on the URL provided.
 ## How to use it?
 
 1. [Fork the repository]() and run the `main.py` using the following command
-
+> Use Python 3.9  
 ```shell
 python main.py # you have to have python 3 installed.
 ```
@@ -24,6 +24,25 @@ python main.py # you have to have python 3 installed.
 | - Page Per Items count (default: 10):  | Any numeric value or skip (defaults to '10') | _integer_ |
 
 3. It will download it for you. Automatically.
+
+**Sample download end:**
+| Status Legend:
+   (OK):download completed.(ERR):error occurred. |
+
+**Note:** Download completed mentions on sucessfull downloads with including error occuered contains invalid or broken media (can be ignored).
+
+### Windows:
+
+> No change required in code.
+### Linux:
+
+```shell
+sudo apt install aria2 # You should make aria2c installed.
+aria2c                 # Check with cmd 
+```
+
+> Check imgdownloader() in main.py
+
 
 ### License: MIT + (use it with care)
 
